@@ -149,6 +149,13 @@ function kubectx(){
     fi
 }
 
+#Print Affinity for a process by pattern
+function affinity(){
+	pid=$(pgrep -f "$1")
+	taskset -pc $pid
+}
+
+
 
 # Awesome London tube status script (https://github.com/smallwat3r/tubestatus)
 function tubestatus {
